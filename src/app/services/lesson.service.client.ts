@@ -3,4 +3,9 @@ export class LessonServiceClient {
     return fetch('https://webdev-summer1-2018-animesh.herokuapp.com/api/course/'+ courseId + '/module/' + moduleId + '/lesson')
       .then(response => response.json());
   }
+
+  findTopicsForLesson(moduleId,courseId,lessonId) {
+    return fetch('https://webdev-summer1-2018-animesh.herokuapp.com/api/course/'+ courseId + '/module/' + moduleId + '/lesson/'+ lessonId + '/topic')
+      .then(response => response.json());
+  }
 }
