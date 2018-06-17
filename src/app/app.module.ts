@@ -12,6 +12,7 @@ import { CourseNavigatorComponent } from './course-navigator/course-navigator.co
 import { LessonlistComponent } from './lessonlist/lessonlist.component';
 import {LessonServiceClient} from "./services/lesson.service.client";
 import { TopiclistComponent } from './topiclist/topiclist.component';
+import { WidgetListComponent } from './widget-list/widget-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { TopiclistComponent } from './topiclist/topiclist.component';
     ModuleListComponent,
     CourseNavigatorComponent,
     LessonlistComponent,
-    TopiclistComponent
+    TopiclistComponent,
+    WidgetListComponent
 
   ],
   imports: [

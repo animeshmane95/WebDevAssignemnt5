@@ -1,0 +1,42 @@
+<div id = "widgetComponent" *ngFor="let widget of widgets">
+  <div [ngSwitch]="widget.widgetType">
+    <div *ngSwitchCase="'Heading'">
+      <div [ngSwitch]="widget.size">
+        <h1 *ngSwitchCase="'1'">{{widget.text}}</h1>
+        <h2 *ngSwitchCase="'2'">{{widget.text}}</h2>
+        <h3 *ngSwitchCase="'3'">{{widget.text}}</h3>
+        <h4 *ngSwitchCase="'4'">{{widget.text}}</h4>
+        <h5 *ngSwitchCase="'5'">{{widget.text}}</h5>
+        <h6 *ngSwitchCase="'6'">{{widget.text}}</h6>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Link'">
+      <a href="{{widget.href}}">{{widget.text}}</a>
+    </div>
+    <div *ngSwitchCase="'List'">
+      <h6><i>List Widget: {{widget.listType}} list </i></h6>
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let item of widget.listItems.split('\n')">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+
+    <div *ngSwitchCase="'Paragraph'">
+      <h6><i>Paragraph Widget </i></h6>
+      <p> Paragraph Contents : {{widget.text}}</p>
+    </div>
+
+    <div *ngSwitchCase="'Image'">
+      <h6><i>Image Widget </i></h6>
+        <img src="{{widget.image}}"
+        alt = "Mountain View"
+        style="width: 500px; height: 300px" />
+    </div>
+
+    <div *ngSwitchCase="'Exam'">
+      <h1>Exam Widget</h1>
+    </div>
+  </div>
+</div>
