@@ -18,7 +18,9 @@ import { WhiteBoardComponent } from './white-board/white-board.component';
 import { LoginComponent } from './login/login.component';
 import {UserServiceClient} from "./services/user.service.client";
 import { RegisterComponent } from './register/register.component';
-
+import { ProfileComponent } from './profile/profile.component';
+import { SectionlistComponent } from './sectionlist/sectionlist.component';
+import {SectionServiceClient} from "./services/section.service.client";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,9 @@ import { RegisterComponent } from './register/register.component';
     WidgetListComponent,
     WhiteBoardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    SectionlistComponent
 
   ],
   imports: [
@@ -43,7 +47,8 @@ import { RegisterComponent } from './register/register.component';
               ModuleServiceClient,
               LessonServiceClient,
               CourseNavigatorServiceClient,
-              UserServiceClient],
+              UserServiceClient,
+              SectionServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
