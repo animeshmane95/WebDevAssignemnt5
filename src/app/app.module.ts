@@ -15,6 +15,10 @@ import { TopiclistComponent } from './topiclist/topiclist.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import {CourseNavigatorServiceClient} from "./services/course-navigator.service.client";
 import { WhiteBoardComponent } from './white-board/white-board.component';
+import { LoginComponent } from './login/login.component';
+import {UserServiceClient} from "./services/user.service.client";
+import { RegisterComponent } from './register/register.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,9 @@ import { WhiteBoardComponent } from './white-board/white-board.component';
     LessonlistComponent,
     TopiclistComponent,
     WidgetListComponent,
-    WhiteBoardComponent
+    WhiteBoardComponent,
+    LoginComponent,
+    RegisterComponent
 
   ],
   imports: [
@@ -36,7 +42,8 @@ import { WhiteBoardComponent } from './white-board/white-board.component';
   providers: [CourseServiceClient, 
               ModuleServiceClient,
               LessonServiceClient,
-              CourseNavigatorServiceClient],
+              CourseNavigatorServiceClient,
+              UserServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
