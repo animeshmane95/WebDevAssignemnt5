@@ -13,6 +13,8 @@ import { LessonlistComponent } from './lessonlist/lessonlist.component';
 import {LessonServiceClient} from "./services/lesson.service.client";
 import { TopiclistComponent } from './topiclist/topiclist.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
+import {CourseNavigatorServiceClient} from "./services/course-navigator.service.client";
+import { WhiteBoardComponent } from './white-board/white-board.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { WidgetListComponent } from './widget-list/widget-list.component';
     CourseNavigatorComponent,
     LessonlistComponent,
     TopiclistComponent,
-    WidgetListComponent
+    WidgetListComponent,
+    WhiteBoardComponent
 
   ],
   imports: [
@@ -32,7 +35,8 @@ import { WidgetListComponent } from './widget-list/widget-list.component';
   ],
   providers: [CourseServiceClient, 
               ModuleServiceClient,
-              LessonServiceClient],
+              LessonServiceClient,
+              CourseNavigatorServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
