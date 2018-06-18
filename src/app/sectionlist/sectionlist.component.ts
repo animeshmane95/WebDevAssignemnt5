@@ -43,6 +43,8 @@ sectionName = '';
   }
 
   ngOnInit() {
-  }
 
+    this.loadSections(this.courseId)
+ 
+}
 }

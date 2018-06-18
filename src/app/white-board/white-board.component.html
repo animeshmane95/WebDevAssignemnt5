@@ -1,11 +1,24 @@
 <div class="container-fluid">
+  <div *ngIf="!isAdmin">	
   <h1>
     White Board
   </h1>
+ </div>
 
+ <div *ngIf = "isAdmin">
+ 	<h1>Admin Page</h1>
+ </div>
+  <div *ngIf="!isLoggedIn">
   <a routerLink="/login" class="btn btn-primary">Login</a>
-  &nbsp;
+  </div>
+  &nbsp;&nbsp;&nbsp;
+  <div *ngIf="!isLoggedIn">
   <a routerLink="/register" class="btn btn-primary">Register</a>
+</div>
+ &nbsp;&nbsp;&nbsp;
+  <div *ngIf="isLoggedIn">
+  <a routerLink="/logout" class="btn btn-danger" (click)="logout()">Logout</a>
+  </div>
 
   <app-course-grid></app-course-grid>
 </div>

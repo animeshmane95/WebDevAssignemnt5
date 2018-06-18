@@ -42,6 +42,12 @@ export class ProfileComponent implements OnInit {
       .profile()
       .then((user) => {
         this.user = user
+        if (user.username == "admin"){
+          console.log("Admin Profile")
+        }
+        else {
+          console.log("Non Admin Profile")
+        }
       });
 
     this.sectionService
