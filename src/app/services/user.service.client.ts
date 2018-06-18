@@ -18,6 +18,7 @@ export class UserServiceClient {
         'content-type': 'application/json'
       }
     }).then(response => response.json());
+
   }
 
   logout() {
@@ -48,5 +49,28 @@ export class UserServiceClient {
         'content-type': 'application/json'
       }
     });
+  }
+
+  updateUser(user){
+
+    alert("indide update user")
+    return fetch('http://localhost:4000/api/update', {
+      body: JSON.stringify(user),
+      credentials: 'include', // include, same-origin, *omit
+      method: 'put',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json());
+
+  // var postObject = {
+  //   method: 'put',
+  //   body: JSON.stringify(user),
+  //   headers: {'content-Type': 'application/json','dataType':'json'} 
+  // }
+  // return fetch('http://localhost:4000/api/profile', postObject)
+  // .then(function (response) {return response.json();}); 
+
+
   }
 }

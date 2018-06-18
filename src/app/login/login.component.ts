@@ -22,6 +22,11 @@ export class LoginComponent implements OnInit {
         alert("Invalid credentials")
         this.router.navigate(['login']);
      }
+
+     else if(response.username == 'admin'){
+       this.router.navigate(['profile']);
+
+     }
      else{
         this.router.navigate(['profile']);
      }

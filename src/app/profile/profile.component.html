@@ -1,22 +1,36 @@
 <div class="container-fluid">
+  
   <h1>Profile</h1>
 
-  <input [(ngModel)]="username"
+  <div id = "inputform">
+  <label>USERNAME</label>
+  <input [(ngModel)]="user.username"
          placeholder="username"
          class="form-control"/>
-  <input [(ngModel)]="firstName"
+  <label>FIRST NAME</label>
+  <input [(ngModel)]="user.firstName"
          placeholder="first name"
          class="form-control"/>
-  <input [(ngModel)]="lastName"
+  <label>LAST NAME</label>
+  <input [(ngModel)]="user.lastName"
          placeholder="lastName"
          class="form-control"/>
-  <input [(ngModel)]="email"
+  <label>EMAIL</label>
+  <input [(ngModel)]="user.email"
          placeholder="email"
+         type="email" 
          class="form-control"/>
-  <button (click)="update()"
+    <label>PHONE NUMBER</label>     
+    <input [(ngModel)]="user.phoneNumber"
+         placeholder="phone number"
+         class="form-control"/>
+  <br/>
+  <button (click)="update(user)"
           class="btn btn-primary btn-block">
     Update
   </button>
+</div >
+
 
   <h2>Sections ({{sections.length}})</h2>
 
