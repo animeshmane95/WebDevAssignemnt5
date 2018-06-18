@@ -6,6 +6,7 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {SectionlistComponent} from "./sectionlist/sectionlist.component";
+import {UpdateSectionComponent} from "./update-section/update-section.component";
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: WhiteBoardComponent},
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'home', component: CourseGridComponent},
+  { path: 'update/:courseId/:sectionId', component: UpdateSectionComponent},
   { path: 'course/:courseId/section', component: SectionlistComponent },
   { path: 'course/:courseId', component: CourseViewerComponent },
   { path: 'course/:courseId/module/:moduleId', component: CourseViewerComponent },

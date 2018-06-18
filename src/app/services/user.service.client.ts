@@ -52,8 +52,6 @@ export class UserServiceClient {
   }
 
   updateUser(user){
-
-    alert("indide update user")
     return fetch('http://localhost:4000/api/update', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit

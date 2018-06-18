@@ -18,6 +18,14 @@ export class SectionServiceClient {
     });
   }
 
+  section(sectionId) {
+    return fetch('http://localhost:4000/api/sectionProfile/' + sectionId,
+      {
+        credentials: 'include', // include, same-origin, *omit
+      })
+      .then(response => response.json());
+  }
+
   findSectionsForCourse(courseId) {
     return fetch(this.SECTION_URL.replace('COURSEID', courseId))
       .then(response => response.json());
@@ -41,4 +49,20 @@ export class SectionServiceClient {
       }
     });
   }
+
+
+  updateSection(section){
+    return fetch('http://localhost:4000/api/updateSection', {
+      body: JSON.stringify(section),
+      credentials: 'include', // include, same-origin, *omit
+      method: 'put',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json());
+
+  }
+
+
+
 }

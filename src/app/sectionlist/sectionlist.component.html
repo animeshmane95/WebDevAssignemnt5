@@ -25,24 +25,25 @@
   <div *ngFor="let section of sections" class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{section.name}}</h5>
-        <h5 class="card-title">{{section.seats}}</h5>
-        <p class="card-text">Section for course</p>
+        <h6 class="card-title">Section Name:{{section.name}}</h6>
+        <h6 class="card-title">Availabel Seats:{{section.seats}}</h6>
+        <p class="card-text">Section for course </p>
         <div *ngIf="!isAdmin">
         <button (click)="enroll(section)"
               class="float-right btn btn-primary">Enroll</button>
         </div>
         <div *ngIf="isAdmin">
-          <button (click)="enroll(section)"
-              class="float-right btn btn-warning">Update</button>
+              <a routerLink="/update/{{courseId}}/{{section._id}}" class="float-right btn btn-warning">Update</a>
       </div>
 
         <div *ngIf="isAdmin">
           <button (click)="deleteSection(section._id)"
               class="float-right btn btn-danger">Delete</button>
+              
       </div>
     </div>
   </div>
+</div>
 </div>
 
 </div>
