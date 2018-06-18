@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {SectionServiceClient} from "../services/section.service.client";
+import { UserServiceClient} from "../services/user.service.client";
+
 @Component({
   selector: 'app-sectionlist',
   templateUrl: './sectionlist.component.html',
@@ -9,6 +11,7 @@ import {SectionServiceClient} from "../services/section.service.client";
 export class SectionlistComponent implements OnInit {
 
   constructor(private service: SectionServiceClient,
+              private service1: UserServiceClient,
               private router: Router,
               private route: ActivatedRoute) {
               this.route.params.subscribe(params => this.loadSections(params['courseId'])) }
@@ -16,6 +19,7 @@ sectionName = '';
   seats = '';
   courseId = '';
   sections = [];
+  isAdmin = false;
   loadSections(courseId) {
     this.courseId = courseId;
     this
@@ -42,9 +46,22 @@ sectionName = '';
       });
   }
 
+  deleteSection(sectionId){
+    console.log(this.courseId)
+    this.service.deleteSection(sectionId);
+
+  }
+
   ngOnInit() {
 
-    this.loadSections(this.courseId)
+    this.loadSections(this.courseId);
+    this.service1.profile().then((response) => {
+      console.log(response);
+      if(response.username == 'admin'){
+        this.isAdmin = true;
+      }
+
+    });
  
 }
 }

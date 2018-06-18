@@ -13,6 +13,7 @@ export class CourseGridComponent implements OnInit {
 
   courses: Course[] = [];
   isLoggedIn = false;
+  isAdmin = false;
 
   ngOnInit() {
     this.service.findAllCourses()
@@ -23,6 +24,12 @@ export class CourseGridComponent implements OnInit {
       if(response != null){
         this.isLoggedIn = true;
       }
+
+      if (response.username = "admin"){
+        this.isAdmin = true;
+      }
+
+      
 
     });
       

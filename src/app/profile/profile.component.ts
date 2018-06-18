@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   username;
   password;
   sections = [];
+  isAdmin = false;
 
   update(user) {
     
@@ -44,6 +45,7 @@ export class ProfileComponent implements OnInit {
         this.user = user
         if (user.username == "admin"){
           console.log("Admin Profile")
+          this.isAdmin = true;
         }
         else {
           console.log("Non Admin Profile")

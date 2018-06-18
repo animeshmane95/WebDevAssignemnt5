@@ -43,6 +43,12 @@
 
   <a class = "btn-primary btn" (click)="logout()">Logout</a>
   &nbsp;
+  <div *ngIf="!isAdmin">
   <a routerLink="/home">Home</a>
+  </div>
+
+  <div *ngIf="isAdmin">
+  <a routerLink="/home">Link to Admin Page</a>
+  </div>
 
 </div>

@@ -16,3 +16,11 @@
     </div>
   </div>
 </div>
+        <div id = "Links">
+        <div *ngIf="isAdmin">
+          <a routerLink="/home">Home</a>
+        </div>
+        <div *ngIf="isAdmin">
+          <a routerLink="/profile">Profile</a>
+        </div>
+      </div>
