@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
 import { SectionlistComponent } from './sectionlist.component';
 
 describe('SectionlistComponent', () => {

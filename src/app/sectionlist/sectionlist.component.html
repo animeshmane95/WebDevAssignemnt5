@@ -1,5 +1,7 @@
 <div class="container-fluid">
   <h1>Sections for course: {{courseId}}</h1>
+
+
   <div *ngIf="isAdmin" id = "sections">
   <label>Section Name</label>
   <input [(ngModel)]="sectionName"
@@ -17,33 +19,45 @@
 </div>
 </div>
 </div>
+<div *ngIf="isAdmin">
+        <a routerLink="/profile">Back to profile</a>
+        
+      </div>
 
 
 
 
 <div class="row" >
-  <div *ngFor="let section of sections" class="col-sm-3">
-    <div class="card">
+  <div *ngFor="let section of sections" class="col-sm-4">
+    <div class="card" id = "sectionCards">
       <div class="card-body">
         <h6 class="card-title">Section Name:{{section.name}}</h6>
         <h6 class="card-title">Availabel Seats:{{section.seats}}</h6>
         <p class="card-text">Section for course </p>
+        <div *ngIf="isAdmin">
+        <a routerLink="/enrollment/{{section._id}}" 
+              class="float-left btn btn-primary">Enrollements</a>
+        </div>
         <div *ngIf="!isAdmin">
         <button (click)="enroll(section)"
               class="float-right btn btn-primary">Enroll</button>
         </div>
-        <div *ngIf="isAdmin">
+        <div *ngIf="isAdmin" >
               <a routerLink="/update/{{courseId}}/{{section._id}}" class="float-right btn btn-warning">Update</a>
       </div>
 
-        <div *ngIf="isAdmin">
+        <div *ngIf="isAdmin" id = "updateButton">
           <button (click)="deleteSection(section._id)"
               class="float-right btn btn-danger">Delete</button>
               
       </div>
+
+
+    
     </div>
   </div>
 </div>
 </div>
 
+      
 </div>

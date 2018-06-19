@@ -3,6 +3,7 @@ export class SectionServiceClient {
   SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
 
   findSectionsForStudent() {
+    console.log("Here");
     const url = 'http://localhost:4000/api/student/section';
     return fetch(url, {
       credentials: 'include'
@@ -16,6 +17,16 @@ export class SectionServiceClient {
       method: 'post',
       credentials: 'include'
     });
+  }
+
+  findStudentsForSection(sectionId){
+    console.log("Here  " + sectionId)
+    const url = 'http://localhost:4000/api/student/section/'+ sectionId;
+        return fetch(url, {
+      credentials: 'include'
+    })
+      .then(response => response.json());
+
   }
 
   unenrollStudentInSection(enrollment,user){

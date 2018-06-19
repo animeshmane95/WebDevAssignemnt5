@@ -11,4 +11,17 @@
 	margin-top: 5px;
 }
 
+#sectionCards{
+	width:400px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
 
+#updateButton{
+	margin-right: 10px;
+}
+
+#studentsInSection{
+	margin-bottom: 5px;
+	margin-top: 2px; 
+}

@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
     console.log(user._id)
     console.log(section.section._id)
     this.sectionService.unenrollStudentInSection(section,user)
-    .then(()=> this.sectionService.findSectionsForStudent());
+    .then(()=> window.location.reload());
   }
 
   ngOnInit() {

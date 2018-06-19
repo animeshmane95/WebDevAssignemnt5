@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {SectionServiceClient} from "../services/section.service.client";
 import { UserServiceClient} from "../services/user.service.client";
+import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-sectionlist',
   templateUrl: './sectionlist.component.html',
-  styleUrls: ['./sectionlist.component.css']
+  styleUrls: ['./sectionlist.component.css'],
+ 
 })
+
+
+
 export class SectionlistComponent implements OnInit {
 
   constructor(private service: SectionServiceClient,
@@ -24,6 +29,7 @@ sectionName = '';
   isAdmin = false;
   isEnrolled = false;
   loadSections(courseId) {
+    console.log("Inside Load sections" + " " + courseId);
     this.courseId = courseId;
     this
       .service
@@ -51,9 +57,14 @@ sectionName = '';
 
 
   deleteSection(sectionId){
-    console.log(this.courseId)
-    this.service.deleteSection(sectionId);
+    console.log("This is course: "+this.courseId)
+    this.service.deleteSection(sectionId)
+    window.location.reload();
 
+  }
+
+  getStudent(studentId){
+    console.log("Hello" + studentId)
   }
 
   ngOnInit() {

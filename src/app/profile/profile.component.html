@@ -31,15 +31,17 @@
   </button>
 </div >
 
-
+  <div *ngIf="!isAdmin">
   <h2>Enrolled Sections ({{sections.length}})</h2>
+</div>
 
-<div id = "sectionDeck">
+<div *ngIf="!isAdmin" id = "sectionDeck">
 <div class="row" >
   <div *ngFor="let enrollment of sections" class="col-sm-3">
     <div class="card">
       <div class="card-body">
         <h6 class="card-title">Section Name:{{enrollment.section.name}}</h6>
+        <h6 class="card-title">Course Id: {{enrollment.section.courseId}}</h6>
         <h6 class="card-title">Availabel Seats:{{enrollment.section.seats}}</h6>
             <button (click)="unenrollUser(enrollment,user)" class = "float-right btn-danger btn">Unenroll</button>
     </div>
@@ -54,7 +56,7 @@
   <a class = "btn-primary btn" (click)="logout()">Logout</a>
 </div>
   <div id = "Link2" *ngIf="!isAdmin">
-  <a routerLink="/home">Home</a>
+  <a routerLink="/home">Click here to see Courses</a>
   </div>
 
   <div id = "Link1" *ngIf="isAdmin">

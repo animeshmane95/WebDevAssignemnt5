@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import { CourseGridComponent } from './CourseGrid/course-grid.component';
 import { CourseViewerComponent } from './CourseViewer/course-viewer.component';
@@ -22,6 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SectionlistComponent } from './sectionlist/sectionlist.component';
 import {SectionServiceClient} from "./services/section.service.client";
 import { UpdateSectionComponent } from './update-section/update-section.component';
+import { EnrollmentsComponent } from './enrollments/enrollments.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,13 +40,16 @@ import { UpdateSectionComponent } from './update-section/update-section.componen
     RegisterComponent,
     ProfileComponent,
     SectionlistComponent,
-    UpdateSectionComponent
+    UpdateSectionComponent,
+    EnrollmentsComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    NgbAccordionModule,
+    NgbModule.forRoot()
   ],
   providers: [CourseServiceClient, 
               ModuleServiceClient,
