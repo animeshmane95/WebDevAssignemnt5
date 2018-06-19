@@ -37,6 +37,13 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  unenrollUser(section,user){
+    console.log(user._id)
+    console.log(section.section._id)
+    this.sectionService.unenrollStudentInSection(section,user)
+    .then(()=> this.sectionService.findSectionsForStudent());
+  }
+
   ngOnInit() {
 
   	 this.service
@@ -54,7 +61,18 @@ export class ProfileComponent implements OnInit {
 
     this.sectionService
       .findSectionsForStudent()
-      .then(sections => this.sections = sections );
+      .then((sections) =>{ 
+        console.log("These are sections" + sections.length)
+        for(let section of sections){
+          if(section.section == null){
+            console.log("true")
+          }
+          else{
+           this.sections.push(section)
+          }
+          }
+       
+        console.log(this.sections);} );
   }
 
 }

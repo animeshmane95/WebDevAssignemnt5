@@ -19,7 +19,10 @@ sectionName = '';
   seats = '';
   courseId = '';
   sections = [];
+  sectionIds = [];
+  courseSectionIds = [];
   isAdmin = false;
+  isEnrolled = false;
   loadSections(courseId) {
     this.courseId = courseId;
     this
@@ -46,6 +49,7 @@ sectionName = '';
       });
   }
 
+
   deleteSection(sectionId){
     console.log(this.courseId)
     this.service.deleteSection(sectionId);
@@ -54,14 +58,56 @@ sectionName = '';
 
   ngOnInit() {
 
-    this.loadSections(this.courseId);
+    this.loadSections(this.courseId)
+    this.service.findSectionsForCourse(this.courseId).then((response)=>{
+      for (let section of response){
+        this.courseSectionIds.push(section._id)
+      }
+      console.log("there1"+this.courseSectionIds);
+    });
+
     this.service1.profile().then((response) => {
-      console.log(response);
+      console.log("User Id:"+response._id);
       if(response.username == 'admin'){
         this.isAdmin = true;
-      }
+      } 
 
+
+
+    }
+    );
+
+    this.service1.profile().then((response)=>{
+      if(response.username != "admin"){
+
+        this.service.findSectionsForStudent().then((response)=>{
+          for(let section of response){
+            try {
+                 if(section.section._id != null){
+                this.sectionIds.push(section.section._id)
+              }
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                          console.log(e, true);
+                      } else {
+                         console.log(e, false);
+                      }
+                  }
+
+
+            
+          }
+           console.log("There"+this.sectionIds);
+        }
+
+
+
+          );
+
+      }
     });
+    console.log("Here"+this.courseSectionIds);
+    console.log("Here 1"+this.sectionIds);
  
 }
 }

@@ -3,3 +3,26 @@
 	padding: 20px;
 	border-style: outset;
 }
+
+#Link1{
+	margin-bottom: 10px;
+}
+
+#Link2{
+	margin-bottom: 10px;	
+}
+
+#loginButton{
+	margin-top: 5px;
+}
+
+#profilePlan{
+	padding: 20px;
+}
+
+#sectionDeck{
+	margin-top: 5px;
+	padding: 10px;
+	border: 1px solid black;
+    border-radius: 5px;
+}

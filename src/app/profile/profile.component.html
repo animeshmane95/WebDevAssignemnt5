@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  
+  <div id = "profilePlan">
   <h1>Profile</h1>
 
   <div id = "inputform">
@@ -32,23 +32,33 @@
 </div >
 
 
-  <h2>Sections ({{sections.length}})</h2>
+  <h2>Enrolled Sections ({{sections.length}})</h2>
 
-  <ul class="list-group">
-    <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.seats}})
-    </li>
-  </ul>
+<div id = "sectionDeck">
+<div class="row" >
+  <div *ngFor="let enrollment of sections" class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Section Name:{{enrollment.section.name}}</h6>
+        <h6 class="card-title">Availabel Seats:{{enrollment.section.seats}}</h6>
+            <button (click)="unenrollUser(enrollment,user)" class = "float-right btn-danger btn">Unenroll</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 
+
+   
+  <div id = "loginButton"> 
   <a class = "btn-primary btn" (click)="logout()">Logout</a>
-  &nbsp;
-  <div *ngIf="!isAdmin">
+</div>
+  <div id = "Link2" *ngIf="!isAdmin">
   <a routerLink="/home">Home</a>
   </div>
 
-  <div *ngIf="isAdmin">
+  <div id = "Link1" *ngIf="isAdmin">
   <a routerLink="/home">Link to Admin Page</a>
   </div>
-
+</div>
 </div>
