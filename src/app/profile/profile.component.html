@@ -26,6 +26,10 @@
     <input [(ngModel)]="user.phoneNumber"
          placeholder="phone number"
          class="form-control"/>
+    <label>Address</label>     
+    <input [(ngModel)]="user.address"
+         placeholder="Address"
+         class="form-control"/>
   <br/>
   <button (click)="update(user)"
           class="btn btn-primary btn-block">

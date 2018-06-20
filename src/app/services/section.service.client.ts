@@ -1,10 +1,10 @@
 export class SectionServiceClient {
 
-  SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
+  SECTION_URL = 'https://webdev-animesh-nodejs.herokuapp.com/api/course/COURSEID/section';
 
   findSectionsForStudent() {
     console.log("Here");
-    const url = 'http://localhost:4000/api/student/section';
+    const url = 'https://webdev-animesh-nodejs.herokuapp.com/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -12,7 +12,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = 'https://webdev-animesh-nodejs.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -21,7 +21,7 @@ export class SectionServiceClient {
 
   findStudentsForSection(sectionId){
     console.log("Here  " + sectionId)
-    const url = 'http://localhost:4000/api/student/section/'+ sectionId;
+    const url = 'https://webdev-animesh-nodejs.herokuapp.com/api/student/section/'+ sectionId;
         return fetch(url, {
       credentials: 'include'
     })
@@ -30,7 +30,7 @@ export class SectionServiceClient {
   }
 
   unenrollStudentInSection(enrollment,user){
-    const url = 'http://localhost:4000/api/student/'+enrollment.section._id+'/section/'+user._id + '/unenrollment/' + enrollment._id;
+    const url = 'https://webdev-animesh-nodejs.herokuapp.com/api/student/'+enrollment.section._id+'/section/'+user._id + '/unenrollment/' + enrollment._id;
     console.log(url);
     console.log("inside");
 
@@ -42,7 +42,7 @@ export class SectionServiceClient {
   }
 
   section(sectionId) {
-    return fetch('http://localhost:4000/api/sectionProfile/' + sectionId,
+    return fetch('https://webdev-animesh-nodejs.herokuapp.com/api/sectionProfile/' + sectionId,
       {
         credentials: 'include', // include, same-origin, *omit
       })
@@ -55,7 +55,7 @@ export class SectionServiceClient {
   }
 
   deleteSection(sectionId){
-    return fetch('http://localhost:4000/api/section/'+sectionId, {
+    return fetch('https://webdev-animesh-nodejs.herokuapp.com/api/section/'+sectionId, {
       method: 'delete'
     });
 
@@ -75,7 +75,7 @@ export class SectionServiceClient {
 
 
   updateSection(section){
-    return fetch('http://localhost:4000/api/updateSection', {
+    return fetch('https://webdev-animesh-nodejs.herokuapp.com/api/updateSection', {
       body: JSON.stringify(section),
       credentials: 'include', // include, same-origin, *omit
       method: 'put',
