@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <div id = "profilePlan">
   <h1>Profile</h1>
+  <div id = "partions">
+  <div id = "splitleft">
 
   <div id = "inputform">
   <label>USERNAME</label>
@@ -31,6 +33,9 @@
   </button>
 </div >
 
+</div>
+
+<div id = "splitright">
   <div *ngIf="!isAdmin">
   <h2>Enrolled Sections ({{sections.length}})</h2>
 </div>
@@ -49,8 +54,8 @@
 </div>
 </div>
 </div>
-
-
+</div>
+</div>
    
   <div id = "loginButton"> 
   <a class = "btn-primary btn" (click)="logout()">Logout</a>

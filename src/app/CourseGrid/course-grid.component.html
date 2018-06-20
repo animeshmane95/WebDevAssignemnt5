@@ -1,8 +1,29 @@
-<h2>Course Grid ({{courses.length}})</h2>
+<div id = "courseGrid">
+<h2>Course Grid </h2>
 
+<div *ngIf="isLoggedIn">
+  <h3>Welcome : {{user.firstName}} </h3>
+  </div>
+
+<div *ngIf="isNotAdmin">
+  <h6>Enrolled Courses</h6>
+  <div class="row" >
+  <div *ngFor="let course of studentEnrolledCourses" class="col-sm-3">
+    <div class="card" id = "cardsClasses">
+      <div class="card-body">
+        <h5 class="card-title">{{course.title}}</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id = "courses">
+<h6 align="center">Available Courses</h6>
+</div>
 <div class="row" >
   <div *ngFor="let course of courses" class="col-sm-3">
-    <div class="card">
+    <div class="card" id = "cards">
       <div class="card-body">
         <h5 class="card-title">{{course.title}}</h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -24,3 +45,6 @@
           <a routerLink="/profile">Profile</a>
         </div>
       </div>
+
+
+</div>

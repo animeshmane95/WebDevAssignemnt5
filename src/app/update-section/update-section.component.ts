@@ -12,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 export class UpdateSectionComponent implements OnInit {
 
   sectionId;
+  courseId;
   constructor(private sectionService: SectionServiceClient,
               private router: Router,
                private route: ActivatedRoute) { this.route.params.subscribe(
@@ -19,6 +20,7 @@ export class UpdateSectionComponent implements OnInit {
 
     setParams(params){
       this.sectionId = params['sectionId'];
+      this.courseId = params['courseId'];
       console.log(this.sectionId)
     }
   section ={};
@@ -26,9 +28,8 @@ export class UpdateSectionComponent implements OnInit {
   updateSection(section) {
     
     console.log(section);
-    this.sectionService.updateSection(section).then((response) =>{
-      alert(response)
-    })
+    this.sectionService.updateSection(section)
+    window.location.replace("http://localhost:4200/course/"+this.courseId +"/section")
   }
 
 

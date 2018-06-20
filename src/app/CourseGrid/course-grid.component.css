@@ -1,14 +1,25 @@
-.card {
+#cards {
   padding: 20px;
   margin-bottom: 15px;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
   width: 300px;
   height: 350px;
 }
+
+#cardsClasses{
+	width:300px;
+	margin-left: 15px;
+}
+
 #courseSection{
 	margin-top: 2px;
 }
 #Links{
 	margin-bottom: 10px;
 }
+
+#courses{
+	margin-top: 10px;
+}
+

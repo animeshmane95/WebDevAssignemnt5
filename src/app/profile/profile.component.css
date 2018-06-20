@@ -2,7 +2,11 @@
 	height: 450px;
 	padding: 20px;
 	border-style: outset;
+	background-color: #FFFFEC;
 }
+
+
+
 
 #Link1{
 	margin-bottom: 10px;
@@ -25,4 +29,5 @@
 	padding: 10px;
 	border: 1px solid black;
     border-radius: 5px;
+    background-color: #FFFFEC;
 }

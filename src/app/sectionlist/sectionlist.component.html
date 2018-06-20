@@ -1,7 +1,5 @@
 <div class="container-fluid">
   <h1>Sections for course: {{courseId}}</h1>
-
-
   <div *ngIf="isAdmin" id = "sections">
   <label>Section Name</label>
   <input [(ngModel)]="sectionName"
@@ -24,9 +22,6 @@
         
       </div>
 
-
-
-
 <div class="row" >
   <div *ngFor="let section of sections" class="col-sm-4">
     <div class="card" id = "sectionCards">
@@ -38,7 +33,8 @@
         <a routerLink="/enrollment/{{section._id}}" 
               class="float-left btn btn-primary">Enrollements</a>
         </div>
-        <div *ngIf="!isAdmin">
+        <div *ngIf="!(isAdmin) && !(section.students.indexOf(userId)!==-1)
+        && !(section.seats == 0)">
         <button (click)="enroll(section)"
               class="float-right btn btn-primary">Enroll</button>
         </div>
@@ -58,6 +54,8 @@
   </div>
 </div>
 </div>
+
+
 
       
 </div>

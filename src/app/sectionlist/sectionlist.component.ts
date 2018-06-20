@@ -23,6 +23,7 @@ export class SectionlistComponent implements OnInit {
 sectionName = '';
   seats = '';
   courseId = '';
+  userId
   sections = [];
   sectionIds = [];
   courseSectionIds = [];
@@ -78,7 +79,8 @@ sectionName = '';
     });
 
     this.service1.profile().then((response) => {
-      console.log("User Id:"+response._id);
+      this.userId = response._id
+      console.log("User Id:" + this.userId);
       if(response.username == 'admin'){
         this.isAdmin = true;
       } 
@@ -108,7 +110,7 @@ sectionName = '';
 
             
           }
-           console.log("There"+this.sectionIds);
+           console.log("There is sections : "+this.sectionIds);
         }
 
 
@@ -117,8 +119,5 @@ sectionName = '';
 
       }
     });
-    console.log("Here"+this.courseSectionIds);
-    console.log("Here 1"+this.sectionIds);
- 
 }
 }
