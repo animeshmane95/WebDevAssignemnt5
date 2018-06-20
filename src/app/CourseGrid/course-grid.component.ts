@@ -40,8 +40,10 @@ export class CourseGridComponent implements OnInit {
           this.studentSections = response
           console.log(this.studentSections)
           for(let sections of this.studentSections){
-            console.log("SEctions:" + sections.section.courseId)
-            this.studentCourses.push(sections.section.courseId)
+            if(sections.section != null){
+              this.studentCourses.push(sections.section.courseId)
+            }
+            
           }
 
           for (let course of this.studentCourses){
