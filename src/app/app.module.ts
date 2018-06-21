@@ -51,7 +51,7 @@ import { EnrollmentsComponent } from './enrollments/enrollments.component';
     NgbAccordionModule,
     NgbModule.forRoot()
   ],
-  providers: [CourseServiceClient, 
+  providers: [ 
               ModuleServiceClient,
               LessonServiceClient,
               CourseNavigatorServiceClient,
