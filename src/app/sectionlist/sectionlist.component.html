@@ -19,9 +19,16 @@
 </div>
 <div *ngIf="isAdmin">
         <a routerLink="/profile">Back to profile</a>
+        &nbsp;&nbsp;
+        <a routerLink="/home">Home</a>
         
       </div>
-
+<div *ngIf="!isAdmin">
+        <a routerLink="/profile">Back to profile</a>
+        &nbsp;&nbsp;
+        <a routerLink="/home">Home</a>
+        
+      </div>
 <div class="row" >
   <div *ngFor="let section of sections" class="col-sm-4">
     <div class="card" id = "sectionCards">

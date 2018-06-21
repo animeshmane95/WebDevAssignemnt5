@@ -1,27 +1,40 @@
 # Assignment5
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+All Functionalities Implemented.
 
-## Development server
+Admin Profile have already been created on remote server.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Admin Account Credentials :-
+username : admin
+password : admin
 
-## Code scaffolding
+Running The Application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To register Click on Register Button.
 
-## Build
+Register Page: 
+1) Duplicate username functionality handled. (i.e. user cannot create account if the username already exists in database.)
+2) Password Matching functionality handled.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To Login into Account enter username and password.
+1) If credentials do not match user cannot login.
+2) If you login as Admin :
 
-## Running unit tests
+Admin Page:-
+Click on link 'Link to Admin Page' below to see all courses.
+Click on Course Section to add or update section.
+Admin also has privilege to see students enrolled in current section. (click 'Enrollment button to see it.')  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+User Page:-
+User (Admin also) can update his/her profile.
+On User's profile page user can see the current enrolled sections. On clicking 'Unenroll' button student can Unenroll for the section.
+Click on link 'Click here to see all courses' below to see all courses.
+On profile page User can see his enrolled courses and available courses.
+On clicking 'Course Section' Button user can see sections available in the courses.
+If the user is enrolled in the section or if available seats are 0 user cannot see 'Enroll' button for that section.
+On clicking enroll button student can enroll in the section. 
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Home Page
+On clicking the 'More Information' Button user can see the modules,lessons,topics and sections for the courses.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
