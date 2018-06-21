@@ -56,7 +56,8 @@ import { EnrollmentsComponent } from './enrollments/enrollments.component';
               LessonServiceClient,
               CourseNavigatorServiceClient,
               UserServiceClient,
-              SectionServiceClient],
+              SectionServiceClient
+             ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
