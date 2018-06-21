@@ -23,7 +23,7 @@ export class UpdateSectionComponent implements OnInit {
       this.courseId = params['courseId'];
       console.log(this.sectionId)
     }
-  section ={};
+  section = new Section();
 
   updateSection(section) {
     
