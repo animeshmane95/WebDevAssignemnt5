@@ -5,6 +5,12 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  findUsers(){
+   return fetch('https://webdev-animesh-nodejs.herokuapp.com/api/user/')
+      .then(response => response.json()); 
+  }
+
+
   login(username, password) {
     const credentials = {
       username: username,
