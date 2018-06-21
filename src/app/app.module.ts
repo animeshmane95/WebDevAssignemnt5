@@ -9,7 +9,7 @@ import {CourseServiceClient} from "./services/course.service.client";
 import { AppComponent } from './app.component';
 import {routing} from './app.routing';
 import { ModuleListComponent } from './module-list/module-list.component'
-import ModuleServiceClient from "./services/module.service.client";
+import {ModuleServiceClient} from './services/module.service.client';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { LessonlistComponent } from './lessonlist/lessonlist.component';
 import {LessonServiceClient} from "./services/lesson.service.client";
