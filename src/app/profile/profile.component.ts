@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
               private sectionService: SectionServiceClient,
               private router: Router) { }
 
-  user = {};
+  user = new User();
   user1 ={};
   username;
   password;
