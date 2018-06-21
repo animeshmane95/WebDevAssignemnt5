@@ -29,7 +29,7 @@ export class UpdateSectionComponent implements OnInit {
     
     console.log(section);
     this.sectionService.updateSection(section)
-    window.location.replace("http://localhost:4200/course/"+this.courseId +"/section")
+    window.location.replace("https://webdev-animesh-nodejs.herokuapp.com/course/"+this.courseId +"/section")
   }
 
 
